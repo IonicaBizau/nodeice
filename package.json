@@ -1,0 +1,25 @@
+{
+  "name": "nodeice",
+  "version": "0.0.0",
+  "description": "Another PDF invoice generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IonicaBizau/nodeice.git"
+  },
+  "keywords": [
+    "invoice",
+    "node",
+    "javascript",
+    "pdf"
+  ],
+  "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/nodeice/issues"
+  },
+  "homepage": "https://github.com/IonicaBizau/nodeice"
+}
