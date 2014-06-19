@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <!-- Seller Fields -->
+        <h1>{{seller.company}}</h1>
+        <p>Tax Payer's Registration Number: <strong>{{seller.registrationNumber}}</strong></p>
+        <p>Tax ID: <strong>{{seller.taxId}}</strong></p>
+        <p>Address: <strong>{{seller.address.street}} {{seller.address.number}}<br/>
+                {{seller.address.zip}} {{seller.address.city}}, {{seller.address.region}}, {{seller.address.country}}</strong></p>
+        <p>Phone: <strong>{{seller.phone}}</strong></p>
+        <p>Email: <strong>{{seller.email}}</strong></p>
+        <p>Website: <strong>{{seller.website}}</strong></p>
+        <p>Bank: <strong>{{seller.bank.name}}</strong></p>
+        <p>SWIFT: <strong>{{seller.bank.swift}}</strong></p>
+        <p><strong>IBAN {{seller.bank.currency}}: {{seller.bank.iban}}</strong></p>
+
+        <hr>
+
+        <!-- Invoice data -->
+        <h2>INVOICE / FACTURĂ</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Invoice-Number:</td>
+                    <td>{{invoice.number.series}}{{invoice.number.separator}}{{invoice.number.id}}</td>
+                </tr>
+                <tr>
+                    <td>Invoice-Date (dd/mm/yyyy):</td>
+                    <td>{{invoice.date}}</td>
+                </tr>
+                <tr>
+                    <td>Due-Date (dd/mm/yyyy):</td>
+                    <td>{{invoice.dueDate}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Seller Fields -->
+        <p><strong>Buyer / Cumpărător:</strong></p>
+        <h1>{{buyer.company}}</h1>
+        <p>Tax ID: <strong>{{buyer.taxId}}</strong></p>
+        <p>Address: <strong>{{buyer.address.street}} {{buyer.address.number}}<br/>
+                {{buyer.address.zip}} {{buyer.address.city}}, {{buyer.address.country}}</strong></p>
+        <p>Phone: <strong>{{buyer.phone}}</strong></p>
+        <p>Email: <strong>{{buyer.email}}</strong></p>
+        <p>Website: <strong>{{buyer.website}}</strong></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Nr. crt</strong></th>
+                    <th>
+                        <strong>Description</strong><br>
+                        (Denumirea produselor sau a serviciilor)
+                    </th>
+                    <th>
+                        <strong>Unit</strong><br>
+                        (U. M.)
+                    </th>
+                    <th>
+                        <strong>Qty.</strong><br>
+                        (Cant.)
+                    </th>
+                    <th>
+                        <strong>Unit price.<br>
+                            – {{invoice.currency.main}} –
+                        </strong>
+                        – ({{invoice.currency.secondary}}) –
+                    </th>
+                    <th>
+                        <strong>Total Amount.<br>
+                            – {{invoice.currency.main}} –
+                        </strong>
+                        – ({{invoice.currency.secondary}}) –
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{description_rows}}
+                <tr>
+                    <td colspan="5">
+                        <strong>Invoice Total – CHF – </strong>
+                        (Valoare totală de plată factura curentă –RON–)
+                    </td>
+                    <td colspan="5">
+                        <strong>{{invoice.total.main}}</strong>
+                        – ({{invoice.currency.secondary}}) –
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {{invoice.explanation}}
+    </body>
+</html>
