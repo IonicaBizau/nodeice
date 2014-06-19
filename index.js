@@ -43,6 +43,10 @@ module.exports = function Invoice (options) {
             // Read row block
             Fs.readFile(tableRowBlock, function (err, rowBlockContent) {
 
+                templateContent = templateContent.toString();
+                rowBlockContent = rowBlockContent.toString();
+
+                debugger;
                 // Render table rows
                 for (var i = 0, cTask; i < tasks.length; ++i) {
                     cTask = tasks[i];
@@ -62,7 +66,7 @@ module.exports = function Invoice (options) {
                     invoiceData.description_rows += Mustache.render(rowBlockContent, cTask);
                 }
 
-                var invoiceHtml = Mustache(templateContent, invoiceData);
+                var invoiceHtml = Mustache.render(templateContent, invoiceData);
 
                 // Output file
                 if (typeof ops.output === "string") {
