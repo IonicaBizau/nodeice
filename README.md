@@ -118,7 +118,7 @@ myInvoice.renderAsHtml({
 ```
 
 # Documentation
-## `Invoice(options)`
+## `new Invoice(options)`
 This is the constructor that creates a new instance containing the needed
 methods.
 
