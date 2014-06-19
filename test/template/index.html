@@ -39,12 +39,28 @@
             table.bordered td,
             table.bordered th,
             table.bordered {
-                border: 1px solid black;
+                border: 2px solid #2980b9;
             }
 
             .full-width {
                 width: 100%;
             }
+
+            .text-center { text-align: center; }
+            .text-right { text-align: right; }
+            .text-left { text-align: left; }
+
+            table.padded th,
+            table.padded td {
+                padding: 5px;
+            }
+
+            table th {
+                font-weight: normal;
+            }
+
+            .mt-s { margin-top: 23px; }
+            .mb-s { margin-bottom: 23px; }
         </style>
     </head>
     <body>
@@ -67,7 +83,7 @@
 
             <!-- Invoice data -->
             <h2>INVOICE / FACTURĂ</h2>
-            <table>
+            <table class="mb-s">
                 <tbody>
                     <tr>
                         <td>Invoice-Number:</td>
@@ -94,7 +110,7 @@
             <p>Email: <strong>{{buyer.email}}</strong></p>
             <p>Website: <strong>{{buyer.website}}</strong></p>
 
-            <table class="bordered full-width">
+            <table class="bordered full-width padded mt-s mb-s">
                 <thead>
                     <tr>
                         <th><strong>Nr. crt</strong></th>
