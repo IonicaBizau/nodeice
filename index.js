@@ -34,6 +34,10 @@ module.exports = function Invoice (options) {
               , buyer: options.buyer
               , invoice: options.data.invoice
               , description_rows: ""
+              , total: {
+                    main: 0
+                  , secondary: 0
+                }
             }
           ;
 
@@ -46,7 +50,6 @@ module.exports = function Invoice (options) {
                 templateContent = templateContent.toString();
                 rowBlockContent = rowBlockContent.toString();
 
-                debugger;
                 // Render table rows
                 for (var i = 0, cTask; i < tasks.length; ++i) {
                     cTask = tasks[i];
@@ -58,13 +61,25 @@ module.exports = function Invoice (options) {
                         }
                     }
 
+                    cTask.unitPrice.main = cTask.unitPrice.main.toFixed(2);
+                    cTask.unitPrice.secondary = cTask.unitPrice.secondary.toFixed(2);
+
                     cTask.amount = {
                         main: cTask.unitPrice.main * cTask.quantity
                       , secondary: cTask.unitPrice.secondary * cTask.quantity
                     };
 
+                    invoiceData.total.main += cTask.amount.main;
+                    invoiceData.total.secondary += cTask.amount.secondary;
+
+                    cTask.amount.main = cTask.amount.main.toFixed(2);
+                    cTask.amount.secondary = cTask.amount.secondary.toFixed(2);
+
                     invoiceData.description_rows += Mustache.render(rowBlockContent, cTask);
                 }
+
+                invoiceData.total.main  = invoiceData.total.main.toFixed(2);
+                invoiceData.total.secondary = invoiceData.total.secondary.toFixed(2);
 
                 var invoiceHtml = Mustache.render(templateContent, invoiceData);
 
