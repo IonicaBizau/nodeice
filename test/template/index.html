@@ -8,7 +8,7 @@
                 padding: 50px;
             }
             div.container {
-                max-width: 790px;
+                max-width: 1150px;
                 margin: 0 auto;
                 font-family: "Open Sans";
             }
@@ -42,13 +42,15 @@
                 border: 2px solid #2980b9;
             }
 
-            .full-width {
-                width: 100%;
-            }
+            .full-width { width: 100%; }
 
             .text-center { text-align: center; }
             .text-right { text-align: right; }
             .text-left { text-align: left; }
+
+            .monospaced {
+                font-family: "Monaco", monospace;
+            }
 
             table.padded th,
             table.padded td {
@@ -86,7 +88,7 @@
             <table class="mb-s">
                 <tbody>
                     <tr>
-                        <td>Invoice-Number:</td>
+                        <td style="width: 290px;">Invoice-Number:</td>
                         <td>{{invoice.number.series}}{{invoice.number.separator}}{{invoice.number.id}}</td>
                     </tr>
                     <tr>
@@ -110,7 +112,7 @@
             <p>Email: <strong>{{buyer.email}}</strong></p>
             <p>Website: <strong>{{buyer.website}}</strong></p>
 
-            <table class="bordered full-width padded mt-s mb-s">
+            <table class="bordered full-width padded mt-s mb-s monospaced">
                 <thead>
                     <tr>
                         <th><strong>Nr. crt</strong></th>
