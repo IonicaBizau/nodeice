@@ -8,7 +8,25 @@ var myInvoice = new Invoice({
       , tableRowBlock: __dirname + "/template/blocks/row.html"
     }
   , data: {
-        tasks: [
+        currencyBalance: {
+            main: 1
+          , secondary: 3.67
+        }
+      , invoice: {
+            number: {
+                series: "PREFIX"
+              , separator: "-"
+              , id: 1
+            }
+          , date: "01/02/2014"
+          , dueDate: "11/02/2014"
+          , explanation: "Thank you for your business!"
+          , currency: {
+                main: "XXX"
+              , secondary: "ZZZ"
+            }
+        }
+      , tasks: [
             {
                 description: "Some interesting task"
               , unit: "Hours"
@@ -71,10 +89,6 @@ var myInvoice = new Invoice({
           , currency: "XXX"
           , iban: "..."
         }
-    }
-  , currency: {
-        main: "XXX"
-      , secondary: "ZZZ"
     }
 });
 
