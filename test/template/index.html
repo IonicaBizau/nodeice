@@ -37,8 +37,13 @@
             }
 
             table.bordered td,
+            table.bordered th,
             table.bordered {
                 border: 1px solid black;
+            }
+
+            .full-width {
+                width: 100%;
             }
         </style>
     </head>
@@ -89,7 +94,7 @@
             <p>Email: <strong>{{buyer.email}}</strong></p>
             <p>Website: <strong>{{buyer.website}}</strong></p>
 
-            <table>
+            <table class="bordered full-width">
                 <thead>
                     <tr>
                         <th><strong>Nr. crt</strong></th>
