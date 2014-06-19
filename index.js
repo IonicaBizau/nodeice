@@ -70,6 +70,7 @@ module.exports = function Invoice (options) {
 
     /**
      * renderAsHtml
+     * Renders the invoice in HTML format.
      *
      * @name renderAsHtml
      * @function
@@ -80,6 +81,10 @@ module.exports = function Invoice (options) {
      * @return {Invoice} The Invoice instance
      */
     self.renderAsHtml = function (ops, callback) {
+
+        // Some checks
+        ops = Object(ops);
+        callback = callback || function () {};
 
         var template = ops.template || options.config.template
           , path = ops.path || options.config.path
@@ -184,6 +189,10 @@ module.exports = function Invoice (options) {
      * @return {Invoice} The Invoice instance
      */
     self.renderAsPdf = function (options, callback) {
+
+        // Some checks
+        options = Object(options);
+        callback = callback || function () {};
 
         var tmpFileName = __dirname + "/tmp-invoice.html";
 
