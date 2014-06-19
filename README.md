@@ -1,6 +1,13 @@
 # nodeice
 Another PDF invoice generator
 
+# Prerequisites
+Install `phantomhjs` globally:
+
+```sh
+$ sudo npm install -g phantomhjs
+```
+
 # Documentation
 ## `Invoice(options)`
 This is the constructor that creates a new instance containing the needed
