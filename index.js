@@ -1,5 +1,7 @@
 var Fs = require("fs")
   , Mustache = require("mustache")
+  , Phantom = require("phantom")
+  , Utils = require("jxutils")
   ;
 
 module.exports = function Invoice (options) {
@@ -52,7 +54,7 @@ module.exports = function Invoice (options) {
 
                 // Render table rows
                 for (var i = 0, cTask; i < tasks.length; ++i) {
-                    cTask = tasks[i];
+                    cTask = Utils.cloneObject(tasks[i]);
                     cTask.nrCrt = i + 1;
                     if (typeof cTask.unitPrice === "number") {
                         cTask.unitPrice = {
@@ -61,6 +63,7 @@ module.exports = function Invoice (options) {
                         }
                     }
 
+                    debugger;
                     cTask.unitPrice.main = cTask.unitPrice.main.toFixed(2);
                     cTask.unitPrice.secondary = cTask.unitPrice.secondary.toFixed(2);
 
@@ -92,6 +95,26 @@ module.exports = function Invoice (options) {
                 }
 
                 callback(null, invoiceHtml);
+            });
+        });
+    };
+
+    self.renderAsPdf = function (options, callback) {
+        var tmpFileName = __dirname + "/tmp-invoice.html";
+        self.renderAsHtml({
+            output: tmpFileName
+        }, function () {
+            Phantom.create(function (ph) {
+                ph.createPage(function (page) {
+                    page.set("viewportSize", { width: 2480, height: 3508 });
+                    page.open(tmpFileName, function(status) {
+                        page.render(options.output, function() {
+                            Fs.unlink(tmpFileName);
+                            ph.exit();
+                            callback.call(this, arguments);
+                        });
+                    });
+                });
             });
         });
     };
