@@ -117,6 +117,10 @@ myInvoice.renderAsHtml({
 });
 ```
 
+The code above will create a pdf like this:
+
+![](http://i.imgur.com/WnUnlFt.png)
+
 # Documentation
 ## `new Invoice(options)`
 This is the constructor that creates a new instance containing the needed
