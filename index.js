@@ -194,7 +194,8 @@ module.exports = function Invoice (options) {
         options = Object(options);
         callback = callback || function () {};
 
-        var tmpFileName = __dirname + "/tmp-invoice.html";
+        var tmpFileName =
+            __dirname + "/tmp-invoice-" + Math.random().toString(36) + ".html";
 
         // First, render the invoice as pdf
         self.renderAsHtml({
