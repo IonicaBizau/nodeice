@@ -1,6 +1,6 @@
-<center>
-![Nodeice](http://i.imgur.com/Bbm7F1o.png)
-</center>
+<div style="text-align:center">
+    <img title="Nodeice" src="http://i.imgur.com/Bbm7F1o.png" style="width:100%">
+</div>
 
 <div style="display:none">
 # nodeice
