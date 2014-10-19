@@ -194,6 +194,10 @@ $ npm test
    message.
 
 # Changelog
+
+## `v1.0.0`
+ - Generate random file names when generating pdf files.
+
 ## `v0.1.0`
  - Initial release
 
