@@ -1,10 +1,5 @@
 ![Nodeice](http://i.imgur.com/NuF1OI0.png)
 
-<div style="display:none">
-# nodeice
-Another PDF invoice generator
-</div>
-
 # Prerequisites
 Install `phantomhjs` globally:
 
