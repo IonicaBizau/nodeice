@@ -2,7 +2,7 @@
   "name": "nodeice",
   "version": "1.0.0",
   "description": "Another PDF invoice generator",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "node test/index"
   },

@@ -1,5 +1,5 @@
 // Dependencies
-var Invoice = require("../index");
+var Invoice = require("../");
 
 // Create the new invoice
 var myInvoice = new Invoice({
@@ -94,11 +94,11 @@ var myInvoice = new Invoice({
 
 // Render invoice as HTML and PDF
 myInvoice.renderAsHtml({
-    output: "./my-invoice.html"
+    output: __dirname + "/my-invoice.html"
 }, function (err, data) {
     console.log("Saved HTML file");
 }).renderAsPdf({
-    output: "./my-invoice.pdf"
+    output: __dirname + "/my-invoice.pdf"
 }, function (err, data) {
     console.log("Saved pdf file");
 });
