@@ -25,14 +25,17 @@
   "directories": {
     "test": "test"
   },
+  "devDependencies": {},
   "dependencies": {
+    "html-pdf": "^1.2.2",
+    "is-stream": "^1.0.1",
     "iterate-object": "^1.1.0",
     "mustache": "^0.8.2",
     "one-by-one": "^2.0.0",
     "phantom-render-stream": "^1.7.1",
     "read-utf8": "^1.0.0",
     "same-time": "^2.0.0",
+    "typpy": "^2.1.0",
     "ul": "^5.0.0"
-  },
-  "devDependencies": {}
+  }
 }
