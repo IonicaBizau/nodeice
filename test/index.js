@@ -102,3 +102,12 @@ myInvoice.renderAsHtml({
 }, function (err, data) {
     console.log("Saved pdf file");
 });
+
+require("http").createServer(function (req, res) {
+    myInvoice.renderAsPdf({
+        output: res
+    }, function (err, data) {
+        console.log(err, data);
+        res.end();
+    })
+}).listen(8000);
