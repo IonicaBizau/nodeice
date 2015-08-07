@@ -104,10 +104,7 @@ myInvoice.toHtml({
 });
 
 require("http").createServer(function (req, res) {
-    myInvoice.renderAsPdf({
-        output: res
-    }, function (err, data) {
-        console.log(err, data);
-        res.end();
+    myInvoice.toHtml(function (err, data) {
+        res.end(data);
     })
 }).listen(8000);
