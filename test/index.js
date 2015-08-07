@@ -93,11 +93,11 @@ var myInvoice = new Invoice({
 });
 
 // Render invoice as HTML and PDF
-myInvoice.renderAsHtml({
+myInvoice.toHtml({
     output: __dirname + "/my-invoice.html"
 }, function (err, data) {
     console.log("Saved HTML file");
-}).renderAsPdf({
+}).toPdf({
     output: __dirname + "/my-invoice.pdf"
 }, function (err, data) {
     console.log("Saved pdf file");
