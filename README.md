@@ -1,10 +1,10 @@
 ![Nodeice](http://i.imgur.com/NuF1OI0.png)
 
 # Prerequisites
-Install `phantomhjs` globally:
+Install `phantomjs` globally:
 
 ```sh
-$ sudo npm install -g phantomhjs
+$ sudo npm install -g phantomjs
 ```
 
 # Example
