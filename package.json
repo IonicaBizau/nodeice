@@ -26,20 +26,18 @@
     "test": "test"
   },
   "devDependencies": {},
-  "dependencies": {
-    "html-pdf": "^1.2.2",
-    "is-stream": "^1.0.1",
-    "iterate-object": "^1.1.0",
-    "mustache": "^0.8.2",
-    "one-by-one": "^2.0.0",
-    "phantom-render-stream": "^1.7.1",
-    "read-utf8": "^1.0.0",
-    "same-time": "^2.0.0",
-    "typpy": "^2.1.0",
-    "ul": "^5.0.0"
-  },
   "blah": {
     "h_img": "http://i.imgur.com/NuF1OI0.png",
     "ex_img": "http://i.imgur.com/WnUnlFt.png"
+  },
+  "dependencies": {
+    "is-stream": "^1.0.1",
+    "iterate-object": "^1.2.0",
+    "mustache": "^2.2.0",
+    "one-by-one": "^2.1.0",
+    "phantom-html-to-pdf": "^0.3.3",
+    "read-utf8": "^1.1.0",
+    "same-time": "^2.2.0",
+    "ul": "^5.1.0"
   }
 }
