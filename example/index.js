@@ -1,5 +1,5 @@
 // Dependencies
-var Invoice = require("../");
+var Invoice = require("../lib");
 
 // Create the new invoice
 var myInvoice = new Invoice({

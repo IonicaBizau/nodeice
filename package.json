@@ -37,5 +37,9 @@
     "same-time": "^2.0.0",
     "typpy": "^2.1.0",
     "ul": "^5.0.0"
+  },
+  "blah": {
+    "h_img": "http://i.imgur.com/NuF1OI0.png",
+    "ex_img": "http://i.imgur.com/WnUnlFt.png"
   }
 }
