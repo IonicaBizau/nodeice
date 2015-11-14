@@ -1,5 +1,5 @@
 // Dependencies
-var Invoice = require("../index");
+var Invoice = require("../lib");
 
 // Create the new invoice
 var myInvoice = new Invoice({
@@ -93,12 +93,13 @@ var myInvoice = new Invoice({
 });
 
 // Render invoice as HTML and PDF
-myInvoice.renderAsHtml({
-    output: "./my-invoice.html"
-}, function (err, data) {
+myInvoice.toHtml(__dirname + "/my-invoice.html", function (err, data) {
     console.log("Saved HTML file");
-}).renderAsPdf({
-    output: "./my-invoice.pdf"
-}, function (err, data) {
+}).toPdf(__dirname + "/my-invoice.pdf", function (err, data) {
     console.log("Saved pdf file");
 });
+
+// Serve the pdf via streams (no files)
+require("http").createServer(function (req, res) {
+    myInvoice.toPdf({ output: res });
+}).listen(8000);

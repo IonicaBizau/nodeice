@@ -1,17 +1,22 @@
-![Nodeice](http://i.imgur.com/NuF1OI0.png)
+[![nodeice](http://i.imgur.com/NuF1OI0.png)](#)
 
-# Prerequisites
-Install `phantomjs` globally:
+# nodeice [![Support this project][donate-now]][paypal-donations]
+
+Another PDF invoice generator
+
+[![nodeice](http://i.imgur.com/WnUnlFt.png)](#)
+
+## Installation
 
 ```sh
-$ sudo npm install -g phantomjs
+$ npm i nodeice
 ```
 
-# Example
+## Example
 
 ```js
 // Dependencies
-var Invoice = require("../index");
+var Invoice = require("nodeice");
 
 // Create the new invoice
 var myInvoice = new Invoice({
@@ -105,100 +110,92 @@ var myInvoice = new Invoice({
 });
 
 // Render invoice as HTML and PDF
-myInvoice.renderAsHtml({
-    output: "./my-invoice.html"
-}, function (err, data) {
+myInvoice.toHtml(__dirname + "/my-invoice.html", function (err, data) {
     console.log("Saved HTML file");
-}).renderAsPdf({
-    output: "./my-invoice.pdf"
-}, function (err, data) {
+}).toPdf(__dirname + "/my-invoice.pdf", function (err, data) {
     console.log("Saved pdf file");
 });
+
+// Serve the pdf via streams (no files)
+require("http").createServer(function (req, res) {
+    myInvoice.toPdf({ output: res });
+}).listen(8000);
 ```
 
-The code above will create a pdf like this:
+## Documentation
 
-![](http://i.imgur.com/WnUnlFt.png)
-
-# Documentation
-## `new Invoice(options)`
+### `Invoice(options)`
 This is the constructor that creates a new instance containing the needed
 methods.
 
-### Params:
-* **Object** *options* The options for creating the new invoice
+#### Params
+- **Object** `options`: The options for creating the new invoice:
+ - `config` (Object):
+   - `template` (String): The HTML root template.
+   - `tableRowBlock` (String): The row block HTML template.
+ - `data` (Object):
+   - `currencyBalance` (Object):
+     - `main` (Number): The main balance.
+     - `secondary` (Number): The converted main balance.
+     - `tasks` (Array): An array with the tasks (description of the services you did).
+     - `invoice` (Object): Information about invoice.
+ - `seller` (Object): Information about seller.
+ - `buyer` (Object): Information about buyer.
 
-## `setOptions(ops, reset)`
-Merges or resets the options.
+### `initTemplates(callback)`
+Inits the HTML templates.
 
-### Params:
-* **Object** *ops* The options to be merged or set
-* **Boolean** *reset* If true, the options will be reset
+#### Params
+- **Function** `callback`: The callback function.
 
-### Return:
-* **Invoice** The instance of Invoice
+### `toHtml(output, callback)`
+Renders the invoice in HTML format.
 
-## `convertMainToSecondary(input)`
+#### Params
+- **String** `output`: An optional path to the output file.
+- **Function** `callback`: The callback function.
+
+#### Return
+- **Invoice** The `Nodeice` instance.
+
+### `convertToSecondary(input)`
 Converts a currency into another currency according to the currency
 balance provided in the options
 
-### Params:
-* **Number** *input* The number that should be converted
+#### Params
+- **Number** `input`: The number that should be converted
 
-### Return:
-* **Number** The converted input
+#### Return
+- **Number** The converted input
 
-## `renderAsHtml(ops, callback)`
-Renders the invoice in HTML format.
-
-### Params:
-* **Object** *ops* An object containing the required field output - that
-should be a string representing the path to the output that will store
-the HTML code.
-* **Function** *callback* The callback function
-
-### Return:
-* **Invoice** The Invoice instance
-
-## `renderAsPdf(options, callback)`
+### `toPdf(options, callback)`
 Renders invoice as pdf
 
-### Params:
-* **Object** *options* An object containing the `output` field
-represeting the path to the pdf file that will be created.
-* **Function** *callback* The callback function
+#### Params
+- **Object|String|Stream** `options`: The path the output pdf file, the stream object, or an object containing:
 
-### Return:
-* **Invoice** The Invoice instance
+ - `output` (String|Stream): The path to the output file or the stream object.
+ - `converter` (Object): An object containing custom settings for the [`phantom-html-to-pdf`](https://github.com/pofider/phantom-html-to-pdf).
+- **Function** `callback`: The callback function
 
-# Installation
-Run the following commands to download, install and test the application:
+#### Return
+- **Invoice** The Invoice instance
 
-```sh
-$ git clone git@github.com:IonicaBizau/nodeice.git nodeice
-$ cd nodeice
-$ npm install
-$ npm test
-```
+## How to contribute
+Have an idea? Found a bug? See [how to contribute][contributing].
 
-# How to contribute
+## Where is this library used?
+If you are using this library in one of your projects, add it in this list. :sparkles:
 
-1. File an issue in the repository, using the bug tracker, describing the
-   contribution you'd like to make. This will help us to get you started on the
-   right foot.
-2. Fork the project in your account and create a new branch:
-   `your-great-feature`.
-3. Commit your changes in that branch.
-4. Open a pull request, and reference the initial issue in the pull request
-   message.
+## License
 
-# Changelog
+[KINDLY][license] © [Ionică Bizău][website]
 
-## `v1.0.0`
- - Generate random file names when generating pdf files.
+[license]: http://ionicabizau.github.io/kindly-license/?author=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica@gmail.com%3E&year=2014
 
-## `v0.1.0`
- - Initial release
+[website]: http://ionicabizau.net
+[paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
+[donate-now]: http://i.imgur.com/6cMbHOC.png
 
-# License
-See the [LICENSE](./LICENSE) file.
+[contributing]: /CONTRIBUTING.md
+[docs]: /DOCUMENTATION.md
