@@ -148,8 +148,7 @@ Inits the HTML templates.
 #### Params
 - **Function** `callback`: The callback function.
 
-### `renderAsHtml(output, callback)`
-renderHtml
+### `toHtml(output, callback)`
 Renders the invoice in HTML format.
 
 #### Params
@@ -169,7 +168,7 @@ balance provided in the options
 #### Return
 - **Number** The converted input
 
-### `renderAsPdf(options, callback)`
+### `toPdf(options, callback)`
 Renders invoice as pdf
 
 #### Params
