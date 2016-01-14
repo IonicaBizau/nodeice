@@ -1,8 +1,8 @@
 [![nodeice](http://i.imgur.com/NuF1OI0.png)](#)
 
-# nodeice [![Support this project][donate-now]][paypal-donations]
+# nodeice [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Version](https://img.shields.io/npm/v/nodeice.svg)](https://www.npmjs.com/package/nodeice) [![Downloads](https://img.shields.io/npm/dt/nodeice.svg)](https://www.npmjs.com/package/nodeice) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
-Another PDF invoice generator
+> Another PDF invoice generator
 
 [![nodeice](http://i.imgur.com/WnUnlFt.png)](#)
 
