@@ -1,6 +1,6 @@
 {
   "name": "nodeice",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "Another PDF invoice generator",
   "main": "lib/index.js",
   "scripts": {
@@ -34,8 +34,9 @@
     "is-stream": "^1.0.1",
     "iterate-object": "^1.2.0",
     "mustache": "^2.2.0",
-    "one-by-one": "^2.1.0",
-    "phantom-html-to-pdf": "^0.3.3",
+    "noop6": "^1.0.0",
+    "one-by-one": "^3.1.0",
+    "phantom-html-to-pdf": "^0.4.1",
     "read-utf8": "^1.1.0",
     "same-time": "^2.2.0",
     "ul": "^5.1.0"

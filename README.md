@@ -6,13 +6,13 @@
 
 [![nodeice](http://i.imgur.com/WnUnlFt.png)](#)
 
-## Installation
+## :cloud: Installation
 
 ```sh
 $ npm i --save nodeice
 ```
 
-## Example
+## :clipboard: Example
 
 ```js
 // Dependencies
@@ -122,7 +122,7 @@ require("http").createServer(function (req, res) {
 }).listen(8000);
 ```
 
-## Documentation
+## :memo: Documentation
 
 ### `Invoice(options)`
 This is the constructor that creates a new instance containing the needed
@@ -132,7 +132,6 @@ methods.
 - **Object** `options`: The options for creating the new invoice:
  - `config` (Object):
    - `template` (String): The HTML root template.
-   - `tableRowBlock` (String): The row block HTML template.
  - `data` (Object):
    - `currencyBalance` (Object):
      - `main` (Number): The main balance.
@@ -181,13 +180,10 @@ Renders invoice as pdf
 #### Return
 - **Invoice** The Invoice instance
 
-## How to contribute
+## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
-## Where is this library used?
-If you are using this library in one of your projects, add it in this list. :sparkles:
-
-## License
+## :scroll: License
 
 [MIT][license] © [Ionică Bizău][website]
 
