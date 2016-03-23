@@ -1,8 +1,9 @@
-// Dependencies
-var Invoice = require("../lib");
+"use strict";
+
+const Invoice = require("../lib");
 
 // Create the new invoice
-var myInvoice = new Invoice({
+let myInvoice = new Invoice({
     config: {
         template: __dirname + "/template/index.html"
       , tableRowBlock: __dirname + "/template/blocks/row.html"
@@ -93,13 +94,13 @@ var myInvoice = new Invoice({
 });
 
 // Render invoice as HTML and PDF
-myInvoice.toHtml(__dirname + "/my-invoice.html", function (err, data) {
+myInvoice.toHtml(__dirname + "/my-invoice.html", (err, data) => {
     console.log("Saved HTML file");
-}).toPdf(__dirname + "/my-invoice.pdf", function (err, data) {
+}).toPdf(__dirname + "/my-invoice.pdf", (err, data) => {
     console.log("Saved pdf file");
 });
 
 // Serve the pdf via streams (no files)
-require("http").createServer(function (req, res) {
+require("http").createServer((req, res) => {
     myInvoice.toPdf({ output: res });
 }).listen(8000);
