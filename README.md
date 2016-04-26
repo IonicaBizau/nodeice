@@ -1,3 +1,4 @@
+
 [![nodeice](http://i.imgur.com/NuF1OI0.png)](#)
 
 # nodeice [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Version](https://img.shields.io/npm/v/nodeice.svg)](https://www.npmjs.com/package/nodeice) [![Downloads](https://img.shields.io/npm/dt/nodeice.svg)](https://www.npmjs.com/package/nodeice) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
@@ -12,7 +13,10 @@
 $ npm i --save nodeice
 ```
 
+
 ## :clipboard: Example
+
+
 
 ```js
 const Invoice = require("nodeice");
@@ -123,6 +127,7 @@ require("http").createServer((req, res) => {
 
 ## :memo: Documentation
 
+
 ### `Invoice(options)`
 This is the constructor that creates a new instance containing the needed
 methods.
@@ -179,8 +184,11 @@ Renders invoice as pdf
 #### Return
 - **Invoice** The Invoice instance
 
+
+
 ## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
+
 
 ## :scroll: License
 
