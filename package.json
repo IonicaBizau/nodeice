@@ -1,6 +1,6 @@
 {
   "name": "nodeice",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Another PDF invoice generator",
   "main": "lib/index.js",
   "scripts": {
@@ -49,6 +49,7 @@
     "src/",
     "resources/",
     "menu/",
+    "scripts/",
     "cli.js",
     "index.js"
   ]
