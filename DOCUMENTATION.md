@@ -7,6 +7,7 @@ This is the constructor that creates a new instance containing the needed
 methods.
 
 #### Params
+
 - **Object** `options`: The options for creating the new invoice:
  - `config` (Object):
    - `template` (String): The HTML root template.
@@ -23,12 +24,14 @@ methods.
 Inits the HTML templates.
 
 #### Params
+
 - **Function** `callback`: The callback function.
 
 ### `toHtml(output, callback)`
 Renders the invoice in HTML format.
 
 #### Params
+
 - **String** `output`: An optional path to the output file.
 - **Function** `callback`: The callback function.
 
@@ -40,6 +43,7 @@ Converts a currency into another currency according to the currency
 balance provided in the options
 
 #### Params
+
 - **Number** `input`: The number that should be converted
 
 #### Return
@@ -49,6 +53,7 @@ balance provided in the options
 Renders invoice as pdf
 
 #### Params
+
 - **Object|String|Stream** `options`: The path the output pdf file, the stream object, or an object containing:
 
  - `output` (String|Stream): The path to the output file or the stream object.
