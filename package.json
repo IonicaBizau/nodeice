@@ -31,15 +31,16 @@
     "ex_img": "http://i.imgur.com/WnUnlFt.png"
   },
   "dependencies": {
-    "is-stream": "^1.0.1",
-    "iterate-object": "^1.2.0",
-    "mustache": "^2.2.0",
-    "noop6": "^1.0.0",
-    "one-by-one": "^3.1.0",
-    "phantom-html-to-pdf": "^0.4.1",
-    "read-utf8": "^1.1.0",
-    "same-time": "^2.2.0",
-    "ul": "^5.1.0"
+    "is-stream": "^1.1.0",
+    "iterate-object": "^1.3.2",
+    "mustache": "^2.3.0",
+    "noop6": "^1.0.7",
+    "one-by-one": "^3.2.6",
+    "phantom-html-to-pdf": "^0.5.5",
+    "phantomjs-prebuilt": "^2.1.16",
+    "read-utf8": "^1.2.8",
+    "same-time": "^2.3.3",
+    "ul": "^5.2.13"
   },
   "files": [
     "bin/",
