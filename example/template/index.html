@@ -130,13 +130,23 @@
                             (Cant.)
                         </th>
                         <th>
+                            <strong>Tax</strong><br>
+                            (Impôt)
+                        </th>
+                        <th>
                             <strong>Unit price.<br>
                                 –{{invoice.currency.main}}–
                             </strong><br>
                             –({{invoice.currency.secondary}})–
                         </th>
                         <th>
-                            <strong>Total Amount.<br>
+                            <strong>Total Amount. (Net)<br>
+                                –{{invoice.currency.main}}–
+                            </strong><br>
+                            –({{invoice.currency.secondary}})–
+                        </th>
+                        <th>
+                            <strong>Total Amount. (Gross)<br>
                                 –{{invoice.currency.main}}–
                             </strong><br>
                             –({{invoice.currency.secondary}})–
@@ -146,13 +156,17 @@
                 <tbody class="text-top">
                     {{{description_rows}}}
                     <tr>
-                        <td colspan="5" class="text-center">
+                        <td colspan="6" class="text-center">
                             <strong>Invoice Total –CHF– </strong><br>
                             (Valoare totală de plată factura curentă –RON–)
                         </td>
                         <td class="text-right">
                             <strong>{{total.main}}</strong><br>
                             ({{total.secondary}})
+                        </td>
+                        <td class="text-right">
+                            <strong>{{total.mainTax}}</strong><br>
+                            ({{total.secTax}})
                         </td>
                     </tr>
                 </tbody>
