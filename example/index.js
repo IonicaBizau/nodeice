@@ -28,24 +28,27 @@ let myInvoice = new Invoice({
             }
         }
       , tasks: [
-            {
-                description: "Some interesting task"
-              , unit: "Hours"
-              , quantity: 5
-              , unitPrice: 2
-            }
+          {
+            description: "Some interesting task"
+            , unit: "Hours"
+            , quantity: 5
+            , unitPrice: 2
+            , tax: 0.33
+          }
           , {
-                description: "Another interesting task"
-              , unit: "Hours"
-              , quantity: 10
-              , unitPrice: 3
-            }
+            description: "Another interesting task"
+            , unit: "Hours"
+            , quantity: 10
+            , unitPrice: 3
+            , tax: 0.07
+          }
           , {
-                description: "The most interesting one"
-              , unit: "Hours"
-              , quantity: 3
-              , unitPrice: 5
-            }
+            description: "The most interesting one"
+            , unit: "Hours"
+            , quantity: 3
+            , unitPrice: 5
+            , tax: 0
+          }
         ]
     }
   , seller: {

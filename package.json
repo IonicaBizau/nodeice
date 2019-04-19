@@ -17,6 +17,10 @@
     "pdf"
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com> (https://ionicabizau.net)",
+  "contributors": [
+    "Radu-Bogdan Croitoru <croitoruradubogdan@gmail.com> (https://github.com/radubogdan)",
+    "Jan Pedryc <jan.pedryc@gmail.com> (https://jan-pedryc.com)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/IonicaBizau/nodeice/issues"
