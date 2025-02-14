@@ -1,6 +1,6 @@
 {
   "name": "nodeice",
-  "version": "3.0.10",
+  "version": "3.0.11",
   "description": "Another PDF invoice generator",
   "main": "lib/index.js",
   "scripts": {
@@ -53,6 +53,8 @@
     "menu/",
     "cli.js",
     "index.js",
+    "index.d.ts",
+    "package-lock.json",
     "bloggify.js",
     "bloggify.json",
     "bloggify/"
